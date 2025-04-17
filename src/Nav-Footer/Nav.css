@@ -1,0 +1,41 @@
+
+.hamburger {
+    display: block; /* Visible on mobile */
+    cursor: pointer;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.nav {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.nav-button {
+    padding: var(--spacing-md);
+    background-color: var(--icterine);
+    color: var(--space-cadet);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: var(--turquoise);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+    }
+
+    .nav.open {
+        display: flex; /* Show when open */
+    }
+}

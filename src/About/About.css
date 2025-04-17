@@ -1,0 +1,76 @@
+#about-section{
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.about-card {
+  margin: 0 auto;
+  padding: 1.5rem;
+  gap: 2rem; /* Gap between columns */
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+}
+
+.description-section {
+  display: grid;
+}
+.description-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
+.about-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.about-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 0.2rem;
+}
+
+.profile-image {
+  aspect-ratio: 1/1;
+  border-radius: 5% 25% 25%;
+  background-image: url("/0_0_384_N.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 16px;
+  border: 3px solid #ccc;
+  margin: 0 auto;
+}
+
+.about-name {
+  font-size: 1.5rem;
+  margin: 8px 0 4px;
+}
+
+.about-role {
+  font-size: 1rem;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.about-description {
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.about-contact p {
+  margin:0 auto;
+  margin: 4px 0;
+}
+
+@media (min-width:600px) {
+  .about-card { 
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+  }
+}

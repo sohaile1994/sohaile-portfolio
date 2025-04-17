@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import "./Nav.css"
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false); // State to manage the open/close status of the menu

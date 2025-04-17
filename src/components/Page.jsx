@@ -2,10 +2,10 @@
 import React from 'react';
 
 
-const Page = ({name, children }) => {
+const Page = ({id, children }) => {
   return (
     <>
-      <div id={`${name}-page`} className={`page ${name}-page`}>
+      <div id={`${id}-page`} className={`page ${id}-page`}>
          {children}
       </div>
     </>

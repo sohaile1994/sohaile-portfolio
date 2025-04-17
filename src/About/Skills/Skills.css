@@ -1,0 +1,103 @@
+/* Base Styles for Skill Card (for mobile and smaller screens by default) */
+#skills-section{
+  grid-column: span 2;
+}
+.skills-grid {
+    column-count: 3; /* Start with a single column on mobile */
+    column-gap: 0.5rem; /* Gap between the columns */
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .skill-card {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    transition: all 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 16px; /* Space between each card */
+    break-inside: avoid; /* Ensure cards don't break between columns */
+  }
+  
+  .skill-icon {
+    font-size: 2rem;
+    transition: opacity 0.3s ease;
+  }
+  
+  .skill-card .tooltip {
+    position: absolute;
+    bottom: 50%; /* Position it above the skill card */
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%); /* Adjust the Y offset to move it higher */
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    visibility: visible;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
+  }
+ 
+  /* Modal Styles */
+  .skill-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .skill-modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    position: relative;
+    width: 90%;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .youtube-link iframe {
+    width: 100%;
+    height: 315px;
+    border: none;
+  }
+  
+  /* Larger Screens (min-width 600px and above) */
+  @media (min-width: 600px) {
+
+    .skill-card {
+      padding: 16px;
+      font-size: 1.4rem;
+    }
+  
+    .skill-icon {
+      font-size: 2.5rem; /* Increase icon size */
+    }
+  
+    .skill-card .tooltip {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  
+    .youtube-link iframe {
+      height: 315px;
+    }
+  }
+  

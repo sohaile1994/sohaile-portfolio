@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FaUser, FaEnvelope, FaLinkedin, FaGithub, FaPaperPlane } from 'react-icons/fa';
+import { FaUser, FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
+import "./Contact.css"
+import Section from '../components/Section';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
+    name: '',
     email: '',
     message: ''
   });
@@ -22,7 +23,7 @@ const Contact = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (!formData.firstName || !formData.email || !formData.message) {
+    if (!formData.name || !formData.email || !formData.message) {
       setError('All fields are required.');
       return;
     }
@@ -30,51 +31,48 @@ const Contact = () => {
     console.log('Message sent successfully!', formData);
     setIsSubmitted(true);
     setError(null);
-    setFormData({ firstName: '', email: '', message: '' }); // Reset the form
+    setFormData({ name: '', email: '', message: '' }); // Reset the form
   };
 
   return (
-    <section id="contact" className="p-lg">
-      <h2 className="text-xl font-bold mb-lg">Contact Me</h2>
-      <form onSubmit={handleSubmit} className="contact-form mb-lg">
-        <div className="mb-md">
-          <label htmlFor="firstName">Your Name</label>
+    <Section id="contact" >
+      <h2 className="text-xl font-bold ">Contact Me</h2>
+      <form onSubmit={handleSubmit} className="contact-form">
+        <div >
           <input
             type="text"
-            name="firstName"
-            id="firstName"
-            value={formData.firstName}
+            name="name"
+            id="name"
+            value={formData.name}
             onChange={handleChange}
-            placeholder="Your Name"
+            placeholder="Name"
             required
           />
         </div>
-        <div className="mb-md">
-          <label htmlFor="email">Your Email</label>
+        <div>
           <input
             type="email"
             name="email"
             id="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Your Email"
+            placeholder="Email"
             required
           />
         </div>
-        <div className="mb-md">
-          <label htmlFor="message">Your Message</label>
+        <div className="">
           <textarea
             name="message"
             id="message"
             value={formData.message}
             onChange={handleChange}
-            placeholder="Your Message"
+            placeholder="Message"
             required
             rows="4"
           />
         </div>
-        {error && <p className="text-red-500 mb-md">{error}</p>}
-        {isSubmitted && <p className="text-green-500 mb-md">Thank you for your message!</p>}
+        {error && <p className="text-red-500 ">{error}</p>}
+        {isSubmitted && <p className="text-green-500">Thank you for your message!</p>}
         <button type="submit" className="submit-button">
           Send Message
         </button>
@@ -84,7 +82,7 @@ const Contact = () => {
         <p><FaGithub className="inline" /> GitHub: <a href={`https://github.com/yourusername`} target="_blank" rel="noopener noreferrer">github.com/yourusername</a></p>
         <p><FaLinkedin className="inline" /> LinkedIn: <a href={`https://linkedin.com/in/yourprofile`} target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a></p>
       </div>
-    </section>
+    </Section>
   );
 };
 

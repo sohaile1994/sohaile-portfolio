@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Project = ({ project }) => {
   const { title, description, githubLink, liveDemoLink } = project;
 
