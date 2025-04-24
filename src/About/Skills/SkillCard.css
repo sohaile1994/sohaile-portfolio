@@ -1,0 +1,43 @@
+.skill-card {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    transition: all 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 16px; /* Space between each card */
+    overflow: hidden;
+  }
+  .skill-description-container{
+    position: absolute; /* Position it absolutely within the skill card */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    display: grid;
+    height: 100%;
+    width: 100%;
+  }
+  .skill-card .background {
+    position: absolute; /* Position it absolutely within the skill card */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 0; /* Start with width of 0 */
+    height: 0; /* Start with height of 0 */
+    border-radius: 50%; 
+    transition: all 0.3s ease;
+    z-index: 0;
+   overflow: hidden;
+}
+.skill-card .skill-description{
+
+  font-size: 1rem;
+  place-self: center;
+  min-width: 160px;
+  color: white;
+}
+/* Trigger the animation */
+.skill-card:hover  .background {
+    width: 100%; /* Expand to full width */
+    height: 100%; /* Expand to full height */
+    border-radius:0;
+}
